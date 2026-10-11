@@ -67,7 +67,7 @@ game-character/
 
 | Компонент | Версия |
 |---|---|
-| JDK | 17 или новее |
+| JDK | 21 или новее |
 | Gradle | 8.5 или новее (Kotlin DSL) |
 | Kotlin (плагин `kotlin("jvm")`) | 2.0.21 |
 | JUnit Jupiter (через `junit-bom`) | 5.10.3 |
