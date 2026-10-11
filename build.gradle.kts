@@ -1,6 +1,7 @@
 plugins {
     kotlin("jvm") version "2.0.21"
     application
+    id("info.solidsoft.pitest") version "1.15.0"
 }
 
 group = "com.game"
@@ -33,6 +34,15 @@ tasks.withType<Test> {
         showExceptions = true
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
+}
+
+pitest {
+    junit5PluginVersion.set("1.2.1")
+    targetClasses.set(setOf("com.game.character.*"))
+    targetTests.set(setOf("com.game.character.*"))
+    threads.set(2)
+    outputFormats.set(setOf("HTML", "XML"))
+    timestampedReports.set(false)
 }
 
 tasks.named<JavaExec>("run") {

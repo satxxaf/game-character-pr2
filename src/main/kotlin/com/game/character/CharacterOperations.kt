@@ -183,7 +183,7 @@ fun gainExperience(character: GameCharacter, amount: Int): GameCharacter {
     var defense = character.defense
 
     // Повышаем уровень, пока накопленного опыта хватает на следующий
-    while (experience > xpForNextLevel(level)) {
+    while (experience >= xpForNextLevel(level)) { // ОШИБКА: должно быть >=
         experience -= xpForNextLevel(level)
         level++
         maxHp += HP_PER_LEVEL
